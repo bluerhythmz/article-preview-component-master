@@ -142,7 +142,6 @@ body {
 
 .share-button {
     position: absolute;
-    display: flex;
     background-color: hsl(217, 19%, 35%);
     width: 24.8rem;
     height: 5.5rem;
@@ -151,9 +150,8 @@ body {
     justify-content: center;
     top: -220%;
     left: -310%;
-    display: none;
     opacity: 1;
-    animation: fadeIn .3s ease;
+    transition: all .3s ease;
 }
 
 .share-button::after {
@@ -183,6 +181,12 @@ body {
 
 .active {
     display: flex;
+    animation: fadeIn .3s ease forwards;
+}
+
+.inactive {
+    display: none;
+    
 }
 
 .colored {
@@ -200,6 +204,16 @@ body {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }
 
